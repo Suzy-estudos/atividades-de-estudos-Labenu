@@ -1,0 +1,45 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Endpoit create user
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "email": "suzy@gmail.com",
+    "password": "labenu"
+}
+
+
+### Endpoint search users
+GET http://localhost:3003/users
+
+
+### Endpoint create product
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "Notebook Dell Inspiron 15",
+    "price": 6397.00
+}
+
+
+### Endpoint search products
+GET http://localhost:3003/products
+
+
+### Endpoint register purchase
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+    "user_id": "103",
+    "product_id": "201",
+    "quantity": 1
+}
+
+
+### Endpoint search user purchases
+GET http://localhost:3003/users/103/purchases

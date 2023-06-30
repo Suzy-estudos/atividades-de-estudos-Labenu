@@ -1,0 +1,50 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Exercício 1 - Endpoint signup (cadastra novos usuários)
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+    "nickname": "Suzy",
+    "email": "suzy@gmail.com",
+    "password": "suzy.labenu"
+}
+
+
+### Exercício 2 - Endpoint login (logar usuários já cadastrados)
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "suzy@gmail.com",
+    "password": "suzy.labenu"
+}
+
+
+### Exercício 3 - Endpoit getAllUsers or by nickname (busca completa de todos os usuários cadastrados ou por nickname)
+GET http://localhost:3003/users?q=Suzy
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgwMjlmMTVjLWRlMGUtNGNhZi1iYzIyLTZiOTkxMzEwYmM4MyIsImlhdCI6MTY1OTQwMjgwOSwiZXhwIjoxNjU5NDg5MjA5fQ.rJoN0FnkxWySI8j4k6ZkZbXRwTiC0tQ71_YiHNQWr84
+
+
+### Exercício 4 - Endpoint editUser (edição de dados do próprio usuário)
+PUT http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgwMjlmMTVjLWRlMGUtNGNhZi1iYzIyLTZiOTkxMzEwYmM4MyIsImlhdCI6MTY1OTQwMjgwOSwiZXhwIjoxNjU5NDg5MjA5fQ.rJoN0FnkxWySI8j4k6ZkZbXRwTiC0tQ71_YiHNQWr84
+Content-Type: application/json
+
+{
+    "nickname":"Suzy_Chiconi",
+    "email": "suzy.chiconi@gmail.com",
+    "password": "suzy_chiconi.labenu"
+}
+
+
+### Exercício 5 - Endpoint deleteUser (deleta via id a conta de um usuário cadastrado)
+DELETE http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgwMjlmMTVjLWRlMGUtNGNhZi1iYzIyLTZiOTkxMzEwYmM4MyIsImlhdCI6MTY1OTQwMjgwOSwiZXhwIjoxNjU5NDg5MjA5fQ.rJoN0FnkxWySI8j4k6ZkZbXRwTiC0tQ71_YiHNQWr84
+Content-Type: application/json
+
+{
+    "id": "f03017bb-2c08-4cdc-bb63-7fbd7cebe01f"
+}

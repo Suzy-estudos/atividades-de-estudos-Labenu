@@ -1,0 +1,39 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Signup
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+    "nickname": "Suzy",
+    "email": "suzy@email.com",
+    "password": "su1974"
+}
+
+### Login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "suzy@email.com",
+    "password": "su1974"
+}
+
+### Get all users (protected)
+GET http://localhost:3003/users?search=
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk0Y2I1NGQ4LTc4ZjYtNDBjNC04MDI4LTEwNzUyNTRmNDY1NyIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk0ODg1NDgsImV4cCI6MTY1OTU3NDk0OH0.stDKVcyd9CdgfbEmFCNPb1MXphxdJ2KX1vaAwVqACWI
+
+### Edit user (protected)
+PUT http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk0Y2I1NGQ4LTc4ZjYtNDBjNC04MDI4LTEwNzUyNTRmNDY1NyIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk0ODg1NDgsImV4cCI6MTY1OTU3NDk0OH0.stDKVcyd9CdgfbEmFCNPb1MXphxdJ2KX1vaAwVqACWI
+Content-Type: application/json
+
+{
+    "nickname": "Suzynha"
+}
+
+### Delete user (protected)
+DELETE http://localhost:3003/users/7079b8e4-95cd-48aa-82a9-77454e94b789
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk0Y2I1NGQ4LTc4ZjYtNDBjNC04MDI4LTEwNzUyNTRmNDY1NyIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk0ODg1NDgsImV4cCI6MTY1OTU3NDk0OH0.stDKVcyd9CdgfbEmFCNPb1MXphxdJ2KX1vaAwVqACWI

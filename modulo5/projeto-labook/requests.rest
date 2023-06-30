@@ -1,0 +1,53 @@
+### Endpoint de teste (Endpoint de teste da API)
+GET http://localhost:3003/ping
+
+
+### Signup (Endpoint para cadastrar novos usuários)
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Suzy",
+    "email": "suzy@gmail.com",
+    "password": "suzy.labenu"
+}
+
+
+### Login (Endpoint para logar usuários já cadastrados no sistema)
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "suzy@gmail.com",
+    "password": "suzy.labenu"
+}
+
+
+### Create Post (Endpoint protegido que cria um post)
+POST http://localhost:3003/posts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYzNTc0YjdlLTUzNGYtNGRhZS05MjI5LTM1ZGEzN2YxZGY5NCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1MTU2NjQsImV4cCI6MTY2MDYwMjA2NH0.t9zhFOILGfkv9Hxqb-VEFOyUfBypUeQhJiEN1tbsH4w
+Content-Type: application/json
+
+{
+    "content": "Hello, word!"
+}
+
+
+### Get All Posts (Endpoint protegido que retorna todos os posts)
+GET http://localhost:3003/posts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYzNTc0YjdlLTUzNGYtNGRhZS05MjI5LTM1ZGEzN2YxZGY5NCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1MTU2NjQsImV4cCI6MTY2MDYwMjA2NH0.t9zhFOILGfkv9Hxqb-VEFOyUfBypUeQhJiEN1tbsH4w
+
+
+### Delete Post (Endpoint protegido que deleta um post)
+DELETE http://localhost:3003/posts/99f80601-1f48-41d8-88eb-b551ab932f82
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYzNTc0YjdlLTUzNGYtNGRhZS05MjI5LTM1ZGEzN2YxZGY5NCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1MTU2NjQsImV4cCI6MTY2MDYwMjA2NH0.t9zhFOILGfkv9Hxqb-VEFOyUfBypUeQhJiEN1tbsH4w
+
+
+### Like Post (Endpoint protegido que dá like em um post)
+POST http://localhost:3003/posts/post/201
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYzNTc0YjdlLTUzNGYtNGRhZS05MjI5LTM1ZGEzN2YxZGY5NCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1MTU2NjQsImV4cCI6MTY2MDYwMjA2NH0.t9zhFOILGfkv9Hxqb-VEFOyUfBypUeQhJiEN1tbsH4w
+
+
+### Deslike Post (Endpoint protegido que remove o like de um post)
+DELETE http://localhost:3003/posts/post/201
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYzNTc0YjdlLTUzNGYtNGRhZS05MjI5LTM1ZGEzN2YxZGY5NCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1MTU2NjQsImV4cCI6MTY2MDYwMjA2NH0.t9zhFOILGfkv9Hxqb-VEFOyUfBypUeQhJiEN1tbsH4w

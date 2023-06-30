@@ -1,0 +1,152 @@
+build
+coverage
+
+.DS_STORE
+node_modules
+scripts / fluxo / * / .flowconfig
+.flowconfig
+* ~
+* .pyc
+.grunhido
+_SpecRunner.html
+_benchmarks_
+construir /
+repositório remoto /
+cobertura /
+.module-cache
+fixtures / dom / public / react-dom.js
+fixtures / dom / public / react.js
+test / the-files-to-test.generated.js
+.registro
+chrome-user-data
+* .sublime-project
+* .sublime-workspace
+.idéia
+* .iml
+.vscode
+* .swp
+* .swo
+
+pacotes / react-devtools-core / dist
+pacotes / react-devtools-extensions / chrome / build
+pacotes / react-devtools-extensions / chrome / * .crx
+pacotes / react-devtools-extensions / chrome / * .pem
+pacotes / react-devtools-extensions / firefox / build
+pacotes / react-devtools-extensions / firefox / * .xpi
+pacotes / react-devtools-extensions / firefox / * .pem
+pacotes / react-devtools-extensions / shared / build
+pacotes / react-devtools-extensions / .tempUserDataDir
+pacotes / react-devtools-inline / dist
+pacotes / react-devtools-shell / dist
+pacotes / react-devtools-timeline / dist
+
+# Registros
+Histórico
+* .log
+npm-debug.log *
+yarn-debug.log *
+fio-erro.log *
+lerna-debug.log *
+
+# Bloqueios
+pacote-lock.json
+fio.lock
+
+# Relatórios de diagnóstico (https://nodejs.org/api/report.html)
+relatório. [ 0-9 ] . [ 0-9 ] . [ 0-9 ] . [ 0-9 ] .json
+
+#Dados de tempo de execução
+pids
+* .pid
+* .seed
+* .pid.lock
+
+# Diretório para libs instrumentadas geradas por jscoverage/JSCover
+lib-cov
+
+# Diretório de cobertura usado por ferramentas como istambul
+cobertura
+* .lcov
+
+# cobertura de teste nyc
+.nyc_output
+
+# Armazenamento intermediário do Grunt (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunhido
+
+# Diretório de dependências do Bower (https://bower.io/)
+bower_components
+
+# configuração node-waf
+.lock-wscript
+
+# Complementos binários compilados (https://nodejs.org/api/addons.html)
+construir / lançar
+
+# Diretórios de dependência
+node_modules /
+jspm_packages /
+
+# Arquivos de declaração TypeScript v1
+digitações /
+
+# cache TypeScript
+* .tsbuildinfo
+
+# Diretório de cache npm opcional
+.npm
+
+# Cache eslint opcional
+.eslintcache
+
+# Cache de micropacote
+.rpt2_cache /
+.rts2_cache_cjs /
+.rts2_cache_es /
+.rts2_cache_umd /
+
+# Histórico de REPL opcional
+.node_repl_history
+
+# Saída do 'pacote npm'
+* .tgz
+
+# Arquivo de integridade do fio
+.yarn-integrity
+
+# arquivo de variáveis ​​de ambiente dotenv
+.env
+.env.test
+
+# cache do pacote de pacotes (https://parceljs.org/)
+.cache
+
+# Saída da compilação Next.js
+.próximo
+
+# Nuxt.js constrói/gera saída
+.nuxt
+distância
+
+# arquivos Gatsby
+.cache /
+# Comente na linha pública se seu projeto usa Gatsby e não Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# público
+
+# saída de compilação do vuepress
+.vuepress / dist
+
+# Diretórios sem servidor
+.sem servidor /
+
+# Cache do FuseBox
+.fusebox /
+
+# Arquivos locais do DynamoDB
+.dynamodb /
+
+# Arquivo de porta TernJS
+.tern-port
+
+.vscode
