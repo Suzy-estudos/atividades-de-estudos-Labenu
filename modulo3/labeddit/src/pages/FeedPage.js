@@ -8,6 +8,13 @@ import { requestCreatePost } from '../services/requests';
 
 function FeedPage() {
     useProtectedPage();
+    const { form, onChange, clear } = useForm({ title: "", body: "" });
+    const { states, getters } = useContext(GlobalStateContext);
+    const { posts } = states;
+    const { getPosts } = getters;
+
+    useEffect(() => {
+        getPosts();
 
     const { form, onChange, clear } = useForm({ title: "", body: "" });
 
@@ -26,6 +33,7 @@ function FeedPage() {
     const createPost = (event) => {
         event.preventDefault();
         requestCreatePost(form, clear, getPosts);
+    }
     };
 
     const changePage = (sum) => {
@@ -60,6 +68,7 @@ function FeedPage() {
                         name={"title"}
                         value={form.title}
                         onChange={onChange}
+                        title={""}
                         pattern={"^.{5,}$"}
                         title={"O nome deve ter no mínimo 5 caracteres"}
                         required
@@ -72,6 +81,7 @@ function FeedPage() {
                         name={"body"}
                         value={form.body}
                         onChange={onChange}
+                        title={""}
                         pattern={"^.{5,}$"}
                         title={"O nome deve ter no mínimo 5 caracteres"}
                         required
@@ -83,6 +93,7 @@ function FeedPage() {
             <hr />
             <section>
                 <h2>Lista de Posts</h2>
+                {showPosts}
                 <nav>
                     <h2>Selecione uma página</h2>
                     {page !== 1 &&

@@ -1,3 +1,5 @@
+import Header from '../components/Header';
+import useProtectedPage from '../hooks/useProtectedPage';
 import { useContext, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
@@ -54,6 +56,11 @@ function PostDetailsPage() {
                 isProtected={true}
             />
             <hr />
+            <section>
+                <h2>Informações do Post</h2>
+            </section>
+            <section>
+                <h2>Escreva seu comentário</h2>
             <button onClick={() => navigate(-1)}>Voltar</button>
             <section className='cards'>
                 <h2>Informações do Post</h2>

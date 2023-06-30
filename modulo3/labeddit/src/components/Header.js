@@ -37,6 +37,15 @@ function Header(props) {
     };
 
     return (
+        <header>
+            <h1>LabEddit</h1>
+            {props.isProtected && (
+                <>
+                    <h3>Bem-vindo, {localStorage.getItem("userEmail")}!</h3>
+                    <button onClick={logout}>Logout</button>
+                </>
+            )}
+        </header>
         <LabHeader>
             <img className='logo' src={logo_labeddit} alt="logo labeddit"/>
             

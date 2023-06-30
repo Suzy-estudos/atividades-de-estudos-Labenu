@@ -2,6 +2,10 @@ import { useState } from "react";
 import axios from "axios";
 import GlobalStateContext from "./GlobalStateContext";
 import { BASE_URL } from "../constants/urls";
+
+const GlobalState = (props) => {
+  const [posts, setPosts] = useState([]);
+  const getPosts = () => {
 import { size } from '../constants/pagination';
 
 const GlobalState = (props) => {
@@ -25,6 +29,9 @@ const GlobalState = (props) => {
     };
 
     axios
+      .get(`${BASE_URL}/posts?page=1&size=10`, header)
+      .then((res) => {
+        setPosts(res.data);
       .get(`${BASE_URL}/posts?page=${currentPage}&size=${size}`, header)
       .then((res) => {
         setPosts(res.data);
@@ -35,6 +42,9 @@ const GlobalState = (props) => {
       });
   };
 
+  const states = { posts };
+  const setters = { setPosts };
+  const getters = { getPosts };
   const getPostComments = (postId) => {
     setIsLoading(true);
 

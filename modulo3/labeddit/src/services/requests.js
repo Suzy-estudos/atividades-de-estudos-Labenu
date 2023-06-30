@@ -32,6 +32,7 @@ export const requestSignUp = (form, clear, navigate) => {
         .then((res) => {
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("userEmail", form.email);
+            alert("Usuário criado com sucesso! Seja bem-vindo!");
             alert("Usuário criado com sucesso! Seja bem-vindo(a)!");
             goToFeedPage(navigate);
         })
