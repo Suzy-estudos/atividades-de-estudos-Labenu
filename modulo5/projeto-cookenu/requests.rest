@@ -1,0 +1,59 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### Signup (Endpoint 1 - Cadastro de usuário)
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "nickname": "Suzy",
+    "email": "suzy@gmail.com",
+    "password": "suzy1974"
+}
+
+
+### Login (Endpoint 2 - Login)
+POST  http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "suzy@gmail.com",
+    "password": "suzy1974"
+}
+
+
+### Create recipe (Endpoint 3 - Cadastro de nova receita)
+POST http://localhost:3003/recipes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTc0MGQ4LTFjNzItNGFkNC04NjQwLTk5MWVkZWViNTdjNSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk2MjYxMjksImV4cCI6MTY1OTcxMjUyOX0.AHYc9NxGWsyZHH1YA9Pubk3m3e7LI4uGhsnysFAoSVw
+Content-Type: application/json
+
+{
+    "title": "Maionese de Hortelã",
+    "description": "Maionese de leite com sabor hortelã"
+}
+
+
+### Edit recipe (Endpoint 4 - Editar receita)
+PUT http://localhost:3003/recipes/26520dd8-1dcc-4707-be74-c831139541f9
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTc0MGQ4LTFjNzItNGFkNC04NjQwLTk5MWVkZWViNTdjNSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk2MjYxMjksImV4cCI6MTY1OTcxMjUyOX0.AHYc9NxGWsyZHH1YA9Pubk3m3e7LI4uGhsnysFAoSVw
+Content-Type: application/json
+
+{
+    "title": "Maionese de Leite",
+    "description": "Maionese caseira de leite, saborizada com temperos à sua escolha"
+}
+
+
+### Delete recipe (Endpoint 5 - Deletar receita)
+DELETE http://localhost:3003/recipes/ed558c5c-7e52-44d0-997b-3a3d1e6294d3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTc0MGQ4LTFjNzItNGFkNC04NjQwLTk5MWVkZWViNTdjNSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk2MjYxMjksImV4cCI6MTY1OTcxMjUyOX0.AHYc9NxGWsyZHH1YA9Pubk3m3e7LI4uGhsnysFAoSVw
+
+
+### Get all recipes (Endpoint 6 - Busca de receita)
+GET http://localhost:3003/recipes?search=kibe
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTc0MGQ4LTFjNzItNGFkNC04NjQwLTk5MWVkZWViNTdjNSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk2Mzk1MTcsImV4cCI6MTY1OTcyNTkxN30.v-8tloIwnLKzrspBbj0F3ZgiGR1GcEsj5GuZimXTNpM
+
+
+### Delete user (Endpoint 7 - Deletar usuário)
+DELETE http://localhost:3003/users/7079b8e4-95cd-48aa-82a9-77454e94b789
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTc0MGQ4LTFjNzItNGFkNC04NjQwLTk5MWVkZWViNTdjNSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NTk2MjYxMjksImV4cCI6MTY1OTcxMjUyOX0.AHYc9NxGWsyZHH1YA9Pubk3m3e7LI4uGhsnysFAoSVw

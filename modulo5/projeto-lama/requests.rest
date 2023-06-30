@@ -1,0 +1,48 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Endpoint de signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Suzy",
+    "email": "suzy@gmail.com",
+    "password": "suzy.labenu"
+}
+
+
+### Endpoint de login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "astrodev@gmail.com",
+    "password": "bananinha"
+}
+
+
+### Endpoint create show
+POST http://localhost:3003/shows
+Authorization: 
+Content-Type: application/json
+
+{
+    "band": "Slipknot",
+    "startAt": "2022/12/08"
+}
+
+
+### Endpoint get shows
+GET http://localhost:3003/shows
+
+
+### Endpoint buy ticket
+POST http://localhost:3003/shows/ticket
+Authorization: 
+Content-Type: application/json
+
+{
+    "showId": 202
+}

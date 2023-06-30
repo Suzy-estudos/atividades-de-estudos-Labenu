@@ -10,6 +10,7 @@ export const useUnprotectedPage = () => {
             goToFeedPage(navigate);
         };
     });
+    }, []);
 };
 
 export default useUnprotectedPage;

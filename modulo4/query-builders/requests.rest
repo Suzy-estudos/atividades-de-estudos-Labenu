@@ -1,0 +1,31 @@
+### Ping
+GET http://localhost:3003/ping
+
+
+### Create Perfume
+POST http://localhost:3003/perfumes
+Content-Type: application/json
+
+{
+    "name": "J'adore",
+    "brand": "Dior",
+    "price": 429.00,
+    "ml": 100
+}
+
+
+### Get Perfumes
+GET http://localhost:3003/perfumes?q=Animale&&Animale
+
+
+### Edit perfume price
+PUT http://localhost:3003/perfumes/01
+Content-Type: application/json
+
+{
+    "price": 286.00
+}
+
+
+### Delete perfume
+DELETE http://localhost:3003/perfumes/1658268690062

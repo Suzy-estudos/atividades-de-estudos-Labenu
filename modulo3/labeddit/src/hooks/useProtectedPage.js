@@ -10,6 +10,7 @@ export const useProtectedPage = () => {
             goToLoginPage(navigate);
         }
     })
+    }, [])
 }
 
 export default useProtectedPage;

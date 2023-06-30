@@ -15,18 +15,40 @@ function FeedPage() {
 
     useEffect(() => {
         getPosts();
+
+    const { form, onChange, clear } = useForm({ title: "", body: "" });
+
+    const { states, setters, getters } = useContext(GlobalStateContext);
+
+    const { posts, page, isLoading } = states;
+
+    const { setPage } = setters;
+
+    const { getPosts } = getters;
+
+    useEffect(() => {
+        getPosts(page);
     }, []);
 
     const createPost = (event) => {
         event.preventDefault();
         requestCreatePost(form, clear, getPosts);
     }
+    };
+
+    const changePage = (sum) => {
+        const nextPage = page + sum;
+
+        setPage(nextPage);
+        getPosts(nextPage);
+    };
 
     const showPosts = posts.length && posts.map((post) => {
         return (
             <PostCard
                 key={post.id}
                 post={post}
+                isFeed={true}
             />
         )
     })
@@ -47,6 +69,8 @@ function FeedPage() {
                         value={form.title}
                         onChange={onChange}
                         title={""}
+                        pattern={"^.{5,}$"}
+                        title={"O nome deve ter no mínimo 5 caracteres"}
                         required
                     />
                     <br />
@@ -58,6 +82,8 @@ function FeedPage() {
                         value={form.body}
                         onChange={onChange}
                         title={""}
+                        pattern={"^.{5,}$"}
+                        title={"O nome deve ter no mínimo 5 caracteres"}
                         required
                     />
                     <br />
@@ -68,6 +94,18 @@ function FeedPage() {
             <section>
                 <h2>Lista de Posts</h2>
                 {showPosts}
+                <nav>
+                    <h2>Selecione uma página</h2>
+                    {page !== 1 &&
+                        <button onClick={() => changePage(-1)}>Voltar página</button>
+                    }
+                    <span> Página {page} </span>
+                    {posts.length &&
+                        <button onClick={() => changePage(1)}>Próxima página</button>
+                    }
+                </nav>
+                <hr />
+                {isLoading ? <p>CARREGANDO...</p> : showPosts}
             </section>
         </main>
     );

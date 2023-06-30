@@ -1,0 +1,62 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Endpoint template) Busca todas as turmas
+GET http://localhost:3003/classrooms
+
+
+### Endpoint 1) Cria turma
+POST http://localhost:3003/classrooms
+Content-Type: application/json
+
+{
+    "name": "Shaw",
+    "module": "0"
+}
+
+
+### Endpoint 2) Buscar turmas ativas
+GET http://localhost:3003/classrooms/actives
+
+
+### Endpoint 3) Mudar turma de módulo
+PUT http://localhost:3003/classrooms/103
+Content-Type: application/json
+
+{
+    "module": "1"
+}
+
+
+### Endpoint template) Busca todos os estudantes
+GET http://localhost:3003/students 
+
+
+### Endpoint 4) Criar estudante
+POST http://localhost:3003/students
+Content-Type: application/json
+
+{
+    "name": "Suzy",
+    "email": "suzyy@gmail.com",
+    "birthdate": "1974/10/22",
+    "classroom_id": "101"
+}
+
+
+### Endpoint 5) Buscar estudantes a partir do seu nome
+GET http://localhost:3003/students?q=Fulano
+
+
+### Endpoint 6) Editar turma que o estudante está matriculado
+PUT http://localhost:3003/students/210
+Content-Type: application/json
+
+{
+    "classroom_id": "101"
+}
+
+
+### Endpoint 7) Exibir todas as pessoas pertencentes a uma turma, exibindo nessa lista apenas a id, name e email de cada participante
+GET http://localhost:3003/students/101

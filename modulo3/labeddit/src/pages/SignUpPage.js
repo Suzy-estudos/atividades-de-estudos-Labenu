@@ -8,6 +8,7 @@ import { goToLoginPage } from "../routes/coordinator";
 function SignUpPage() {
     useUnprotectedPage();
     const navigate = useNavigate();
+    useUnprotectedPage();    const navigate = useNavigate();
 
     const { form, onChange, clear } = useForm({ name: "", email: "", password: "" });
 
@@ -32,6 +33,8 @@ function SignUpPage() {
                         value={form.name}
                         onChange={onChange}
                         title={""}
+                        pattern={"^.{3,}$"}
+                        title={"O nome deve ter no mínimo 3 caracteres"}
                         required
                     />
                     <br />
@@ -53,6 +56,8 @@ function SignUpPage() {
                         value={form.password}
                         onChange={onChange}
                         title={""}
+                        pattern={"^.{8,30}$"}
+                        title={"O nome deve ter no mínimo 8 e no máximo 30 caracteres"}
                         required
                     />
                     <br />

@@ -33,6 +33,7 @@ export const requestSignUp = (form, clear, navigate) => {
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("userEmail", form.email);
             alert("Usuário criado com sucesso! Seja bem-vindo!");
+            alert("Usuário criado com sucesso! Seja bem-vindo(a)!");
             goToFeedPage(navigate);
         })
         .catch((err) => {
@@ -59,6 +60,148 @@ export const requestCreatePost = (form, clear, getPosts) => {
             alert(res.data);
             getPosts();
             clear();
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+};
+
+export const requestCreateComment = (form, clear, getPostComments, postId) => {
+    const header = {
+        headers: {
+            authorization: localStorage.getItem("token")
+        }
+    };
+
+    const body = {
+        body: form.body
+    };
+
+    axios.post(`${BASE_URL}/posts/${postId}/comments`, body, header)
+        .then((res) => {
+            alert(res.data);
+            getPostComments(postId);
+            clear();
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+};
+
+export const requestCreatePostVote = (postId, direction, getPosts) => {
+    const header = {
+        headers: {
+            authorization: localStorage.getItem("token")
+        }
+    };
+
+    const body = {
+        direction: direction
+    };
+
+    axios.post(`${BASE_URL}/posts/${postId}/votes`, body, header)
+        .then(() => {
+            alert("Voto registrado com sucesso!");
+            getPosts();
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+};
+
+export const requestCreateCommentVote = (commentId, direction, getPostComments, postId) => {
+    const header = {
+        headers: {
+            authorization: localStorage.getItem("token")
+        }
+    };
+
+    const body = {
+        direction: direction
+    };
+
+    axios.post(`${BASE_URL}/comments/${commentId}/votes`, body, header)
+        .then(() => {
+            alert("Voto registrado com sucesso!");
+            getPostComments(postId);
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+
+};
+
+export const requestChangePostVote = (postId, direction, getPosts) => {
+    const header = {
+        headers: {
+            authorization: localStorage.getItem("token")
+        }
+    };
+
+    const body = {
+        direction: direction
+    };
+
+    axios.put(`${BASE_URL}/posts/${postId}/votes`, body, header)
+        .then(() => {
+            alert("Voto modificado com sucesso!");
+            getPosts();
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+};
+
+export const requestChangeCommentVote = (commentId, direction, getPostComments, postId) => {
+    const header = {
+        headers: {
+            authorization: localStorage.getItem("token")
+        }
+    };
+
+    const body = {
+        direction: direction
+    };
+
+    axios.put(`${BASE_URL}/comments/${commentId}/votes`, body, header)
+        .then(() => {
+            alert("Voto modificado com sucesso!");
+            getPostComments(postId);
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+};
+
+export const requestDeletePostVote = (postId, getPosts) => {
+    const header = {
+        headers: {
+            authorization: localStorage.getItem("token")
+        }
+    };
+
+    axios
+        .delete(`${BASE_URL}/posts/${postId}/votes`, header)
+        .then(() => {
+            alert("Voto removido com sucesso!");
+            getPosts();
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+};
+
+export const requestDeleteCommentVote = (commentId, getPostComments, postId) => {
+    const header = {
+        headers: {
+            authorization: localStorage.getItem("token")
+        }
+    };
+
+    axios.delete(`${BASE_URL}/comments/${commentId}/votes`, header)
+        .then(() => {
+            alert("Voto removido com sucesso!");
+            getPostComments(postId);
         })
         .catch((err) => {
             console.log(err.message);
